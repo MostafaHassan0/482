@@ -1,0 +1,15 @@
+function rot_mat = yaw_rot(mat)
+V = 200;    % m/s
+R = 5000;   % m
+psi = V/R;  % rad
+
+%  Return Rz(psi) and horizontal projector P
+%  psi (rad)
+Rz = [cos(psi) -sin(psi) 0;
+      sin(psi)  cos(psi) 0;
+           0         0   1];
+
+rot_mat = Rz*mat;
+
+
+end
